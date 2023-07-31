@@ -16,7 +16,7 @@ pipeline {
         }
 	stage('building container') { 
             steps {
-                    sh 'docker run -td jwt-app go-image'     
+                    sh 'docker run -td --name random jwt-app '     
 	                echo 'Build Image Completed'
                     sh 'docker images'
                 }
