@@ -15,7 +15,7 @@ pipeline {
             }
     stage('Build docker image') { 
             steps {
-                    sh 'sudo docker build -t go-image .'     
+                    sh 'docker build -t go-image .'     
 	                echo 'Build Image Completed'
                     sh 'docker images'
                 }
