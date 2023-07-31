@@ -13,5 +13,14 @@ pipeline {
                 sh 'go build -o main.go'
             }
             }
+    stage('Build docker image') { 
+            steps {
+            def customImage = docker.build("go-image:${env.BUILD_ID}")
+
+            customImage.inside {
+                sh 'go mod tidy'
+                }
+                }
+        }
     }
 }
