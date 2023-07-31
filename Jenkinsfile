@@ -14,11 +14,11 @@ pipeline {
                     sh 'docker images'
                 }
         }
-	stage('building container') { 
+	stage('running container') { 
             steps {
                     sh 'docker run -td --name random jwt-app '     
 	                echo 'Build Image Completed'
-                    sh 'docker images'
+                    sh 'docker ps'
                 }
         }
     }
