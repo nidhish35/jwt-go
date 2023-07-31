@@ -7,12 +7,6 @@ pipeline {
             }
             }
     
-    stage('Build code') { 
-            steps {
-                sh "go mod tidy"
-                sh 'go build -o main.go'
-            }
-            }
     stage('Build docker image') { 
             steps {
                     sh 'docker build -t go-image .'     
